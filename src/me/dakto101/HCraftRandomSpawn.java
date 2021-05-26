@@ -1,16 +1,25 @@
 package me.dakto101;
 
-import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HCraftRandomSpawn extends JavaPlugin {
     
+	public static HCraftRandomSpawn plugin;
+	
     public void onEnable() {
-    	Bukkit.getServer().getConsoleSender().sendMessage("§aHCraft Random Spawn da chays");
+    	plugin = this;
+    	registerEvent(new HCraftRandomSpawnListener());
     }
     
     public void onDisable() {
     	
     }
+    
+	public static void registerEvent(Listener... listener) {
+		for (Listener l : listener) {
+			plugin.getServer().getPluginManager().registerEvents(l, plugin);
+		}
+	}
     
 }
