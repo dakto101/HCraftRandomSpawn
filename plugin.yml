@@ -1,6 +1,6 @@
 name: HCraftRandomSpawn
 author: dakto101
 main: me.dakto101.HCraftRandomSpawn
-version: 1.0.0
+version: 1.0.1
 depend: 
 softdepend: []
